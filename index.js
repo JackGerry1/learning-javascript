@@ -1,21 +1,15 @@
 let count = 0;
-let saveEl = document.getElementById("save-el");
+const saveEl = document.getElementById("save-el");
+const countEl = document.getElementById("count-el");
 const button = document.getElementById("increment-btn");
 
 button.addEventListener("click", () => {
   count++;
-  document.getElementById("count-el").innerText = count;
+  countEl.textContent = count;
 });
 
 function save() {
-  let countPlusDash = " " + count + " -";
-  saveEl.innerText += countPlusDash;
+  saveEl.textContent += count + " - ";
+  count = 0;
+  countEl.textContent = count;
 }
-
-// let welcomeEl = document.getElementById("welcome-el");
-// let names = "jack ";
-// let greeting = "Welcome Back ";
-// let myGreeting = greeting + names;
-
-// welcomeEl.innerText = myGreeting
-// welcomeEl.innerText += "\u{1F44D}";
